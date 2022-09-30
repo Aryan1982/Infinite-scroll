@@ -38,6 +38,13 @@ async function getPhotos(){
 	}
 }
 
+//check scrolling is near bottom of page
+window.addEventListener('scroll',()=>{
+	if(window.innerHeight + window.scrollY>= document.body.offsetHeight - 1000){
+		getPhotos();
+	}
+})
+
 // Onload
 
 getPhotos();
